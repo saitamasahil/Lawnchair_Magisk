@@ -6,7 +6,7 @@ The Lawnchair Magisk module offers a comprehensive solution, featuring an array 
 
 ### Features
 - Simple to install. Just flash & forget.
-- 6 Different types of lawnicons available. Desired lawnicons can be selected while flashing in magisk.
+- 6 Different types of lawnicons available. Desired lawnicons can be selected while flashing in magisk. [Check Preview](https://telegra.ph/Lawnicons-Preview-01-30) of these themed icons here.
 - Out of the box navigation gestures support with proper animations.
 
 ### Compatibility
@@ -26,9 +26,9 @@ The Lawnchair Magisk module offers a comprehensive solution, featuring an array 
 - Simply uninstall module from Magisk
 
 ## Download Links
-- [Mirror 1]()
-- [Mirror 2]()
-- [Mirror 3]()
+- [Mirror 1](https://www.pling.com/p/1980061)
+- [Mirror 2](https://store.kde.org/p/1980061)
+- [Mirror 3](https://www.opendesktop.org/p/1980061)
 
 ## Building from source
 
