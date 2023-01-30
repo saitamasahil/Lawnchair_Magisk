@@ -22,10 +22,67 @@ The Lawnchair Magisk module offers a comprehensive solution, featuring an array 
 - Flash the file in Magisk and select your desired Lawnicons using volume keys.
 - Reboot your device and go to **Settings** > **Apps** > **Default apps** > **Home app** and make sure **Lawnchair Magisk** is selected.
 
+### Uninstallation
+- Simply uninstall module from Magisk
+
 ## Download Links
 - [Mirror 1]()
 - [Mirror 2]()
 - [Mirror 3]()
+
+## Building from source
+
+### For Ubuntu, Debian, and other Linux distributions
+- The required zip package install command is in the script itself. However, if you encounter any errors, you can install **zip** manually. On Ubuntu or Debian, Use the following command to do so."
+```sh
+sudo apt install zip
+```
+- Now clone the repo using git.
+```sh
+git clone --depth=1 https://github.com/saitamasahil/Lawnchair_Magisk
+```
+- Navigate to the **Lawnchair_Magisk** folder.
+```sh
+cd Lawnchair_Magisk
+```
+- Run autobuild.sh.
+```sh
+bash autobuild.sh
+```
+- Use below command to update repo if you have already cloned it before.
+```sh
+git pull
+```
+
+### For Termux
+- Open Termux, copy & paste this command:
+```sh
+termux-setup-storage
+```
+and give Termux storage access. If you get this warning "It appears that directory '~/storage' already exists. This script is going to rebuild its structure from scratch, wiping all dangling files. The actual storage content is not going to be deleted" then just do press "y". It won't do any harm to your device.
+- Now copy & paste this command:
+```sh
+pkg upgrade || true
+pkg install -y git
+rm -rf Pixel-Launcher-Extended
+git clone --depth=1 https://github.com/saitamasahil/Lawnchair_Magisk
+cd Lawnchair_Magisk
+bash autobuild.sh
+mv Lawnchair\ Magisk* /sdcard
+echo "Your magisk module is available in Internal Storage"
+```
+- Please make sure to grant storage permissions, if Termux asks you to do so, you will get Magisk module in your internal storage.
+- Choose Offline Installer, Online Installer or Customize Installer using number keys.
+- Use [Termux From F-Droid](https://f-droid.org/en/packages/com.termux/) to perform these tasks.
+- The required zip package install command is in the script itself. However, if you encounter any errors, you can install **zip** manually. Use the following command to do so."
+```sh
+pkg install zip
+```
+- Use below command to update repo if you have already cloned it before.
+```sh
+cd Lawnchair_Magisk
+git pull
+```
 
 ## Credits/Thanks
 - [Lawnchair](https://github.com/LawnchairLauncher/lawnchair)

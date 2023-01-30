@@ -299,30 +299,30 @@ init_main() {
       rm -rf "$MODPATH/system/priv-app/Lawnicons/TeamFiles.apk"
     fi
   else
-  echo "Unsupported SDK version: $sdk_version"
-  exit 1
+    echo "Unsupported SDK version: $sdk_version"
+    exit 1
   fi
 
-ui_print "[*] Clearing system cache to properly make it work..."
-ui_print ""
+  ui_print "[*] Clearing system cache to properly make it work..."
+  ui_print ""
 
-rm -rf "/data/system/package_cache"
+  rm -rf "/data/system/package_cache"
 
-sleep 0.5
+  sleep 0.5
 
-ui_print "[*] Done!"
-ui_print ""
+  ui_print "[*] Done!"
+  ui_print ""
 
-sleep 0.5
+  sleep 0.5
 
-ui_print " --- Notes --- "
-ui_print ""
-ui_print "[*] Reboot is required"
-ui_print ""
-ui_print "[*] Report issues to @fileschat on Telegram"
-ui_print ""
-ui_print "[*] You can find me at @saitama_96 on Telegram for direct support"
+  ui_print " --- Notes --- "
+  ui_print ""
+  ui_print "[*] Reboot is required"
+  ui_print ""
+  ui_print "[*] Report issues to @fileschat on Telegram"
+  ui_print ""
+  ui_print "[*] You can find me at @saitama_96 on Telegram for direct support"
 
-sleep 2
+  sleep 2
 
 }
