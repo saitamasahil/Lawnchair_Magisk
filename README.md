@@ -20,7 +20,7 @@ The Lawnchair Magisk module offers a comprehensive solution, featuring an array 
 - Uninstall any other launcher if you're using one. Only keep the default launcher.
 - Download the module installation file from [Download Links](#download-links) available.
 - Flash the file in Magisk and select your desired Lawnicons using volume keys.
-- Reboot your device and go to **Settings** > **Apps** > **Default apps** > **Home app** and make sure **Lawnchair Magisk** is selected.
+- Reboot your device and go to **Settings** > **Apps** > **Default apps** > **Home app** and make sure **Lawnchair** is selected.
 
 ### Uninstallation
 - Simply uninstall module from Magisk
