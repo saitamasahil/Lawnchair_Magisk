@@ -8,6 +8,7 @@ The Lawnchair Magisk module offers a comprehensive solution, featuring an array 
 - Simple to install. Just flash & forget.
 - 6 Different types of lawnicons available. Desired lawnicons can be selected while flashing in magisk. [Check Preview](https://telegra.ph/Lawnicons-Preview-01-30) of these themed icons here.
 - Out of the box navigation gestures support with proper animations.
+- Google Feed(Lawnfeed) included.
 
 ### Compatibility
 - Android 12L
@@ -93,5 +94,6 @@ git pull
 - [RKBDI](https://github.com/RadekBledowski)
 - [TeamFiles](https://github.com/TeamFiles)
 - [ACons](https://telegram.me/acons_icons)
+- [skittles9823](https://github.com/skittles9823)
 
 Brought to you by [saitamasahil](https://github.com/saitamasahil)!
