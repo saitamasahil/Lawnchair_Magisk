@@ -40,7 +40,6 @@ REPLACE="
 /system/product/priv-app/NexusLauncherRelease
 /system/product/overlay/PixelLauncherIconsOverlay
 /system/system_ext/priv-app/NexusLauncherRelease
-/system/system_ext/priv-app/DerpLauncherQuickStep
 /system/system_ext/priv-app/TrebuchetQuickStep
 /system/system_ext/priv-app/Lawnchair
 /system/system_ext/priv-app/PixelLauncherRelease
