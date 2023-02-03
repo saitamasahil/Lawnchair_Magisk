@@ -65,7 +65,7 @@ and give Termux storage access. If you get this warning "It appears that directo
 ```sh
 pkg upgrade || true
 pkg install -y git
-rm -rf Pixel-Launcher-Extended
+rm -rf Lawnchair_Magisk
 git clone --depth=1 https://github.com/saitamasahil/Lawnchair_Magisk
 cd Lawnchair_Magisk
 bash autobuild.sh
