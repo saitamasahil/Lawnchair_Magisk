@@ -6,7 +6,7 @@ The Lawnchair Magisk module offers a comprehensive solution, featuring an array 
 
 ### Features
 - Simple to install. Just flash & forget.
-- 6 Different types of lawnicons available. Desired lawnicons can be selected while flashing in magisk. [Check Preview](https://telegra.ph/Lawnicons-Preview-01-30) of these themed icons here.
+- 6 Different types of lawnicons available. Desired lawnicons can be selected using **Lawnicons Manager** app. [Check Preview](https://telegra.ph/Lawnicons-Preview-01-30) of these themed icons here. Lawnicons Manager app can be accessed through app drawer after flashing launcher.
 - Out of the box navigation gestures support with proper animations.
 - Google Feed(Lawnfeed) included.
 
