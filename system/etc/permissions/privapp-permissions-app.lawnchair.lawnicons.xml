@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<permissions>
+    <privapp-permissions package="app.lawnchair.lawnicons">
+        <permission name="android.permission.INTERNET"/>
+        <permission name="app.lawnchair.lawnicons.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSIONxkzr"/>
+        <permission name="app.lawnchair.lawnicons.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION"/>
+    </privapp-permissions>
+</permissions>
