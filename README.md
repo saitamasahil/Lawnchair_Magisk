@@ -89,6 +89,7 @@ git pull
 - [Lawnchair](https://github.com/LawnchairLauncher/lawnchair)
 - [LiArch55](http://telegram.me/LiArch55)
 - [MrSluffy](https://github.com/MrSluffy)
+- [Jale Shaw](https://github.com/xjl12)
 - [cayicons](https://www.coolapk.com/apk/app.lawnchair.lawnicons)
 - [WaifuPX-DG](https://github.com/WaifuPX-DG)
 - [RKBDI](https://github.com/RadekBledowski)
