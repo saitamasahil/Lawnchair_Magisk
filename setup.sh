@@ -45,6 +45,11 @@ REPLACE="
 /system/system_ext/priv-app/Lawnchair
 /system/system_ext/priv-app/PixelLauncherRelease
 /system/system_ext/priv-app/Launcher3QuickStep
+/system/product/overlay/PixelLauncherIconsOverlay
+/system/product/overlay/CustomPixelLauncherOverlay
+/system/product/overlay/ThemedIconsOverlay.apk
+/system/product/overlay/PixelLauncherIconsOverlay.apk
+/system/product/overlay/CustomPixelLauncherOverlay.apk
 "
 
 ############
