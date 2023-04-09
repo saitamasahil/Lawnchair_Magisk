@@ -159,6 +159,48 @@ init_main() {
     exit 1
   fi
 
+  ui_print ""
+  ui_print "[*] Do you want to install Lawnicons Manager App?"
+  ui_print "[*] Press volume up to switch to another choice"
+  ui_print "[*] Press volume down to continue with that choice"
+  ui_print ""
+
+  sleep 0.5
+
+  ui_print "--------------------------------"
+  ui_print "[1] Yes"
+  ui_print "--------------------------------"
+  ui_print "[2] No"
+  ui_print "--------------------------------"
+
+  ui_print ""
+  ui_print "[*] Select your desired option:"
+
+  SM=1
+  while true; do
+    ui_print "  $SM"
+    "$VKSEL" && SM="$((SM + 1))" || break
+    [[ "$SM" -gt "2" ]] && SM=1
+  done
+
+  case "$SM" in
+  "1") FCTEXTAD1="Yes" ;;
+  "2") FCTEXTAD1="No" ;;
+  esac
+
+  ui_print "[*] Selected: $FCTEXTAD1"
+  ui_print ""
+
+  if [[ "$FCTEXTAD1" == "Yes" ]]; then
+    :
+
+  elif [[ "$FCTEXTAD1" == "No" ]]; then
+    rm -rf "$MODPATH/system/priv-app/Lawniconsbak"
+    rm -rf "$MODPATH/system/priv-app/LawniconsManager"
+    rm -rf "$MODPATH/system/etc/permissions/privapp-permissions-app.lawnchair.lawnicons.xml"
+    rm -rf "$MODPATH/system/etc/permissions/privapp-permissions-com.saitama.liarach.lawnmagisk.xml"
+  fi
+
   ui_print "[*] Clearing system cache to properly make it work..."
   ui_print ""
 
