@@ -94,27 +94,8 @@ init_main() {
     rm -rf "$MODPATH/system/product/overlay/QuickSwitchOverlay/QuickSwitchOverlay12.apk"
     rm -rf "$MODPATH/system/etc/permissions/privapp-permissions-app.lawnchair.xml"
     rm -rf "$MODPATH/system/etc/sysconfig/app.lawnchair-hiddenapi-package-whitelist.xml"
-    # Get the security patch date from build.prop
-    PATCH_DATE=$(getprop ro.build.version.security_patch)
-
-    # Convert it to YYYYMM format
-    PATCH_YEAR=${PATCH_DATE:0:4}
-    PATCH_MONTH=${PATCH_DATE:5:2}
-    PATCH_LEVEL=$PATCH_YEAR$PATCH_MONTH
-
-    if [ $PATCH_LEVEL -le 202202 ]; then
-      ui_print "Android 13/13 QPR detected!"
-      ui_print "Security Patch - $PATCH_DATE"
-      rm -rf "$MODPATH/system/priv-app/Lawnchair/a13qpr2.apk"
-
-    elif [ $PATCH_LEVEL -ge 202303 ]; then
-      ui_print "Android 13 QPR2 detected!"
-      ui_print "Security Patch - $PATCH_DATE"
-      rm -rf "$MODPATH/system/priv-app/Lawnchair/a13qpr.apk"
-    fi
-
     ui_print ""
-    ui_print "[*] If the information displayed above is accurate?"
+    ui_print "[*] Select your Android 13 version?"
     ui_print "[*] Press volume up to switch to another choice"
     ui_print "[*] Press volume down to continue with that choice"
     ui_print ""
@@ -122,9 +103,9 @@ init_main() {
     sleep 0.5
 
     ui_print "--------------------------------"
-    ui_print "[1] Yes"
+    ui_print "[1] Android 13/13 QPR(February security patch or below)"
     ui_print "--------------------------------"
-    ui_print "[2] No"
+    ui_print "[2] Android 13 QPR2(March security patch or above)"
     ui_print "--------------------------------"
 
     ui_print ""
@@ -138,25 +119,19 @@ init_main() {
     done
 
     case "$SM" in
-    "1") FCTEXTAD1="Yes" ;;
-    "2") FCTEXTAD1="No" ;;
+    "1") FCTEXTAD1="Android 13/13 QPR" ;;
+    "2") FCTEXTAD1="Android 13 QPR2" ;;
     esac
 
     ui_print "[*] Selected: $FCTEXTAD1"
     ui_print ""
 
-    if [[ "$FCTEXTAD1" == "Yes" ]]; then
-      ui_print "The installation process of Lawnchair Magisk has been started!!"
+    if [[ "$FCTEXTAD1" == "Android 13/13 QPR" ]]; then
+      rm -rf "$MODPATH/system/priv-app/Lawnchair/a13qpr2.apk"
 
-    elif [[ "$FCTEXTAD1" == "No" ]]; then
-      ui_print "Tell your rom maintainer to fix"
-      ui_print "'getprop ro.build.version.security_patch - $PATCH_DATE' value"
-      exit 1
+    elif [[ "$FCTEXTAD1" == "Android 13 QPR2" ]]; then
+      rm -rf "$MODPATH/system/priv-app/Lawnchair/a13qpr.apk"
     fi
-
-  else
-    echo "Unsupported SDK version: $sdk_version"
-    exit 1
   fi
 
   ui_print ""
