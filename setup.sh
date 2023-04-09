@@ -82,17 +82,78 @@ init_main() {
   sdk_version=$(getprop ro.build.version.sdk)
 
   if [ $sdk_version -eq 32 ]; then
-    rm -rf "$MODPATH/system/priv-app/Lawnchair/a13.apk"
+    rm -rf "$MODPATH/system/priv-app/Lawnchair/a13qpr.apk"
+    rm -rf "$MODPATH/system/priv-app/Lawnchair/a13qpr2.apk"
     rm -rf "$MODPATH/system/product/overlay/QuickSwitchOverlay/QuickSwitchOverlay13.apk"
     rm -rf "$MODPATH/system/etc/permissions/privapp-permissions-app.lawnchair.debug.xml"
     rm -rf "$MODPATH/system/etc/sysconfig/app.lawnchair.debug-hiddenapi-package-whitelist.xml"
+    ui_print "The installation process of Lawnchair Magisk has been started!!"
 
   elif [ $sdk_version -eq 33 ]; then
     rm -rf "$MODPATH/system/priv-app/Lawnchair/a12.apk"
     rm -rf "$MODPATH/system/product/overlay/QuickSwitchOverlay/QuickSwitchOverlay12.apk"
     rm -rf "$MODPATH/system/etc/permissions/privapp-permissions-app.lawnchair.xml"
     rm -rf "$MODPATH/system/etc/sysconfig/app.lawnchair-hiddenapi-package-whitelist.xml"
-  
+    # Get the security patch date from build.prop
+    PATCH_DATE=$(getprop ro.build.version.security_patch)
+
+    # Convert it to YYYYMM format
+    PATCH_YEAR=${PATCH_DATE:0:4}
+    PATCH_MONTH=${PATCH_DATE:5:2}
+    PATCH_LEVEL=$PATCH_YEAR$PATCH_MONTH
+
+    if [ $PATCH_LEVEL -le 202202 ]; then
+      ui_print "Android 13/13 QPR detected!"
+      ui_print "Security Patch - $PATCH_DATE"
+      rm -rf "$MODPATH/system/priv-app/Lawnchair/a13qpr2.apk"
+
+    elif [ $PATCH_LEVEL -ge 202303 ]; then
+      ui_print "Android 13 QPR2 detected!"
+      ui_print "Security Patch - $PATCH_DATE"
+      rm -rf "$MODPATH/system/priv-app/Lawnchair/a13qpr.apk"
+    fi
+
+    ui_print ""
+    ui_print "[*] If the information displayed above is accurate?"
+    ui_print "[*] Press volume up to switch to another choice"
+    ui_print "[*] Press volume down to continue with that choice"
+    ui_print ""
+
+    sleep 0.5
+
+    ui_print "--------------------------------"
+    ui_print "[1] Yes"
+    ui_print "--------------------------------"
+    ui_print "[2] No"
+    ui_print "--------------------------------"
+
+    ui_print ""
+    ui_print "[*] Select your desired option:"
+
+    SM=1
+    while true; do
+      ui_print "  $SM"
+      "$VKSEL" && SM="$((SM + 1))" || break
+      [[ "$SM" -gt "2" ]] && SM=1
+    done
+
+    case "$SM" in
+    "1") FCTEXTAD1="Yes" ;;
+    "2") FCTEXTAD1="No" ;;
+    esac
+
+    ui_print "[*] Selected: $FCTEXTAD1"
+    ui_print ""
+
+    if [[ "$FCTEXTAD1" == "Yes" ]]; then
+      ui_print "The installation process of Lawnchair Magisk has been started!!"
+
+    elif [[ "$FCTEXTAD1" == "No" ]]; then
+      ui_print "Tell your rom maintainer to fix"
+      ui_print "'getprop ro.build.version.security_patch - $PATCH_DATE' value"
+      exit 1
+    fi
+
   else
     echo "Unsupported SDK version: $sdk_version"
     exit 1
